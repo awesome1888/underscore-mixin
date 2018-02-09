@@ -1,0 +1,7 @@
+node_modules/
+*.log
+*.tar.gz
+.idea/
+.meteor/local/
+local-script/
+pm2-meteor.json
