@@ -10,6 +10,12 @@ const config = {
     output: {
         filename: 'client.js',
         path: path.resolve(__dirname, 'build')
+    },
+
+    resolve: {
+        alias: {
+            './build/server.js': './build/client.js'
+        }
     }
 };
 

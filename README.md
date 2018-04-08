@@ -1,5 +1,10 @@
 # Some useful underscore mixins we use
 
+DO NOT INSTALL THIS!!!!!!!!!!!!!!!!!!!<br />
+DO NOT INSTALL THIS!!!!!!!!!!!!!!!!!!!<br />
+DO NOT INSTALL THIS!!!!!!!!!!!!!!!!!!!<br />
+DO NOT INSTALL THIS!!!!!!!!!!!!!!!!!!!<br />
+
 Check if `arg` is a non-empty string: 
 ~~~~
 _.isStringNotEmpty(arg);
