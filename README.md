@@ -77,5 +77,5 @@ _.deepEqual(obj1, obj2);
 npm install;
 npm run dev.build; # build a developlment version
 # or
-npm run dev; # build a prodction, minified and uglifyed version
+npm run build; # build a prodction, minified and uglifyed version
 ~~~~

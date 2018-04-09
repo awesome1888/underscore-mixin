@@ -1,12 +1,10 @@
 // just in case if "someone" has already imported another version of underscore NOT out of NPM =/
-if (!_) {
-    const _ = require('underscore');
-}
+const __ = typeof _ === 'undefined' ? require('underscore') : _;
 
 import clone from 'clone';
 import deepEqual from 'deep-equal';
 
-_.mixin({
+__.mixin({
     /**
      * Check if the argument is a string and it is not empty
      * @param {*} value
@@ -14,12 +12,12 @@ _.mixin({
      */
     isStringNotEmpty: function(value)
     {
-        return _.isString(value) && value.length > 0;
+        return __.isString(value) && value.length > 0;
     },
 
     isStringNotEmptyTrimmed: function(value)
     {
-        if (!_.isString(value))
+        if (!__.isString(value))
         {
             return false;
         }
@@ -36,7 +34,7 @@ _.mixin({
      */
     isArrayNotEmpty: function(value)
     {
-        return _.isArray(value) && value.length > 0;
+        return __.isArray(value) && value.length > 0;
     },
 
     /**
@@ -46,22 +44,22 @@ _.mixin({
      */
     isObjectNotEmpty: function(value)
     {
-        return _.isObject(value) && Object.keys(value).length > 0;
+        return __.isObject(value) && Object.keys(value).length > 0;
     },
 
     isPlainObject(value)
     {
-        return _.isObject(value) && value.constructor === Object;
+        return __.isObject(value) && value.constructor === Object;
     },
 
     isExist(value)
     {
-        return !_.isUndefined(value) && !_.isNull(value);
+        return !__.isUndefined(value) && !__.isNull(value);
     },
 
     makeMap(data, field, unsetKey = false)
     {
-        if (_.isArrayNotEmpty(data))
+        if (__.isArrayNotEmpty(data))
         {
             return data.reduce((result, item) => {
                 const key = item[field];
@@ -102,7 +100,7 @@ _.mixin({
 
     lCFirst: function(value)
     {
-        if (_.isStringNotEmpty(value))
+        if (__.isStringNotEmpty(value))
         {
             return value.substr(0, 1).toLowerCase() + value.substr(1);
         }
@@ -112,7 +110,7 @@ _.mixin({
 
     uCFirst: function(value)
     {
-        if (_.isStringNotEmpty(value))
+        if (__.isStringNotEmpty(value))
         {
             return value.substr(0, 1).toUpperCase() + value.substr(1);
         }
@@ -122,16 +120,16 @@ _.mixin({
 
     intersectKeys: function(one, two)
     {
-        if (!_.isObject(one))
+        if (!__.isObject(one))
         {
             return one;
         }
-        if (!_.isObjectNotEmpty(two))
+        if (!__.isObjectNotEmpty(two))
         {
             return {};
         }
 
-        return _.intersection(
+        return __.intersection(
             Object.keys(one),
             Object.keys(two)
         ).reduce(function(result, key) {
@@ -151,4 +149,4 @@ _.mixin({
     }
 });
 
-module.exports = _;
+module.exports = __;
