@@ -13,7 +13,8 @@ const config = {
     // where to put the output bundle
     output: {
         filename: 'server.js',
-        path: path.resolve(__dirname, 'build')
+        path: path.resolve(__dirname, 'build'),
+        libraryTarget: 'commonjs2',
     },
 
     externals: [webpackNodeExternals()],
