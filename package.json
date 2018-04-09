@@ -1,6 +1,6 @@
 {
   "name": "underscore-mixin",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Some useful underscore mixins",
   "main": "index.js",
   "scripts": {
