@@ -1,12 +1,15 @@
 {
   "name": "underscore-mixin",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "Some useful underscore mixins",
   "main": "index.js",
   "scripts": {
     "build": "npm-run-all --parallel build.*",
-    "build.server": "webpack --config webpack.server.js",
-    "build.client": "webpack --config webpack.client.js",
+    "build.server": "webpack --config webpack.server.js --mode production",
+    "build.client": "webpack --config webpack.client.js --mode production",
+    "dev.build": "npm-run-all --parallel dev.build.*",
+    "dev.build.server": "webpack --config webpack.server.js --mode development",
+    "dev.build.client": "webpack --config webpack.client.js --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -20,6 +23,8 @@
     "url": "https://github.com/awesome1888/underscore-mixin"
   },
   "dependencies": {
+    "clone": "^1.0.4",
+    "deep-equal": "^1.0.1",
     "underscore": "^1.8.3"
   },
   "devDependencies": {

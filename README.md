@@ -1,9 +1,20 @@
 # Some useful underscore mixins we use
 
-DO NOT INSTALL THIS!!!!!!!!!!!!!!!!!!!<br />
-DO NOT INSTALL THIS!!!!!!!!!!!!!!!!!!!<br />
-DO NOT INSTALL THIS!!!!!!!!!!!!!!!!!!!<br />
-DO NOT INSTALL THIS!!!!!!!!!!!!!!!!!!!<br />
+## Installation
+
+~~~~
+npm install underscore-mixin --save
+~~~~
+
+## Usage
+
+Just do
+~~~~
+import 'underscore-mixin';
+~~~~
+on both server and client, and that`s it. Below this line you will be able to use the functions:
+
+## The Functions
 
 Check if `arg` is a non-empty string: 
 ~~~~
@@ -25,6 +36,11 @@ Check if `arg` is a non-empty object:
 _.isObjectNotEmpty(arg);
 ~~~~
 
+Check if `arg` is a plain object (an object with no custom constructor): 
+~~~~
+_.isPlainObject(arg);
+~~~~
+
 Extract value of deeply nested property of `obj`: 
 ~~~~
 _.getValue(obj, 'some.inner[0].property');
@@ -43,4 +59,23 @@ _.lCFirst(arg);
 Produce key intersection of two objects:
 ~~~~
 _.intersectKeys(obj1, obj2);
+~~~~
+
+Deep clone of `obj`:
+~~~~
+_.deepClone(obj);
+~~~~
+
+Deep equality of `obj1` and `obj2`:
+~~~~
+_.deepEqual(obj1, obj2);
+~~~~
+
+## Build process, just in case if you want one :)
+
+~~~~
+npm install;
+npm run dev.build; # build a developlment version
+# or
+npm run dev; # build a prodction, minified and uglifyed version
 ~~~~

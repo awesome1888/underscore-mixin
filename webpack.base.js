@@ -19,5 +19,11 @@ module.exports = {
                 }
             }
         ]
+    },
+
+    externals : {
+        underscore: '_',
+        clone: 'clone',
+        deepEqual: 'deep-equal',
     }
 };

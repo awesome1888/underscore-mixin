@@ -1,4 +1,10 @@
-import _ from 'underscore';
+// just in case if "someone" has already imported another version of underscore NOT out of NPM =/
+if (!_) {
+    const _ = require('underscore');
+}
+
+import clone from 'clone';
+import deepEqual from 'deep-equal';
 
 _.mixin({
     /**
@@ -41,6 +47,34 @@ _.mixin({
     isObjectNotEmpty: function(value)
     {
         return _.isObject(value) && Object.keys(value).length > 0;
+    },
+
+    isPlainObject(value)
+    {
+        return _.isObject(value) && value.constructor === Object;
+    },
+
+    isExist(value)
+    {
+        return !_.isUndefined(value) && !_.isNull(value);
+    },
+
+    makeMap(data, field, unsetKey = false)
+    {
+        if (_.isArrayNotEmpty(data))
+        {
+            return data.reduce((result, item) => {
+                const key = item[field];
+                if (unsetKey)
+                {
+                    delete item[field];
+                }
+                result[key] = item;
+                return result;
+            }, {});
+        }
+
+        return {};
     },
 
     /**
@@ -105,4 +139,16 @@ _.mixin({
             return result;
         }, {});
     },
+
+    deepClone(value)
+    {
+        return clone(value, false);
+    },
+
+    deepEqual(one, two)
+    {
+        return deepEqual(one, two);
+    }
 });
+
+module.exports = _;
