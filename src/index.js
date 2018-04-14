@@ -138,15 +138,15 @@ __.mixin({
         }, {});
     },
 
-    deepClone(value)
+    deepClone: function(value)
     {
         return clone(value, false);
     },
 
-    deepEqual(one, two)
+    deepEqual: function(one, two)
     {
         return deepEqual(one, two);
-    }
+    },
 });
 
 module.exports = __;
