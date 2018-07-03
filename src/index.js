@@ -1,5 +1,5 @@
 // just in case if "someone" has already imported another version of underscore NOT out of NPM =/
-const __ = typeof _ === 'undefined' ? require('underscore') : _;
+const __ = (typeof _ === 'undefined' || _ === null || typeof _.mixin === 'undefined') ? require('underscore') : _;
 
 import clone from 'clone';
 import deepEqual from 'deep-equal';
