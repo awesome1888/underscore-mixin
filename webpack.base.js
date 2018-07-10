@@ -22,8 +22,9 @@ module.exports = {
     },
 
     externals : {
-        underscore: '_',
+        underscore: 'underscore',
         clone: 'clone',
-        deepEqual: 'deep-equal',
+        // deepEqual: 'deep-equal',
+        'deep-equal': 'deep-equal',
     }
 };

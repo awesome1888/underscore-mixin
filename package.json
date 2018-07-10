@@ -1,8 +1,9 @@
 {
   "name": "underscore-mixin",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Some useful underscore mixins",
   "main": "index.js",
+  "module": "build/client.js",
   "scripts": {
     "build": "npm-run-all --parallel build.*",
     "build.server": "webpack --config webpack.server.js --mode production",

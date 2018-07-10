@@ -9,7 +9,8 @@ const config = {
     // where to put the output bundle
     output: {
         filename: 'client.js',
-        path: path.resolve(__dirname, 'build')
+        path: path.resolve(__dirname, 'build'),
+        libraryTarget: 'amd',
     },
 
     resolve: {

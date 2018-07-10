@@ -1,8 +1,8 @@
-import __ from 'underscore';
+import _ from 'underscore';
 import clone from 'clone';
 import deepEqual from 'deep-equal';
 
-__.mixin({
+_.mixin({
     /**
      * Check if the argument is a string and it is not empty
      * @param {*} value
@@ -10,12 +10,12 @@ __.mixin({
      */
     isStringNotEmpty: function(value)
     {
-        return __.isString(value) && value.length > 0;
+        return _.isString(value) && value.length > 0;
     },
 
     isStringNotEmptyTrimmed: function(value)
     {
-        if (!__.isString(value))
+        if (!_.isString(value))
         {
             return false;
         }
@@ -32,7 +32,7 @@ __.mixin({
      */
     isArrayNotEmpty: function(value)
     {
-        return __.isArray(value) && value.length > 0;
+        return _.isArray(value) && value.length > 0;
     },
 
     /**
@@ -42,22 +42,22 @@ __.mixin({
      */
     isObjectNotEmpty: function(value)
     {
-        return __.isObject(value) && Object.keys(value).length > 0;
+        return _.isObject(value) && Object.keys(value).length > 0;
     },
 
     isPlainObject(value)
     {
-        return __.isObject(value) && value.constructor === Object;
+        return _.isObject(value) && value.constructor === Object;
     },
 
     isExist(value)
     {
-        return !__.isUndefined(value) && !__.isNull(value);
+        return !_.isUndefined(value) && !_.isNull(value);
     },
 
     makeMap(data, field, unsetKey = false)
     {
-        if (__.isArrayNotEmpty(data))
+        if (_.isArrayNotEmpty(data))
         {
             return data.reduce((result, item) => {
                 const key = item[field];
@@ -98,7 +98,7 @@ __.mixin({
 
     lCFirst: function(value)
     {
-        if (__.isStringNotEmpty(value))
+        if (_.isStringNotEmpty(value))
         {
             return value.substr(0, 1).toLowerCase() + value.substr(1);
         }
@@ -108,7 +108,7 @@ __.mixin({
 
     uCFirst: function(value)
     {
-        if (__.isStringNotEmpty(value))
+        if (_.isStringNotEmpty(value))
         {
             return value.substr(0, 1).toUpperCase() + value.substr(1);
         }
@@ -118,16 +118,16 @@ __.mixin({
 
     intersectKeys: function(one, two)
     {
-        if (!__.isObject(one))
+        if (!_.isObject(one))
         {
             return one;
         }
-        if (!__.isObjectNotEmpty(two))
+        if (!_.isObjectNotEmpty(two))
         {
             return {};
         }
 
-        return __.intersection(
+        return _.intersection(
             Object.keys(one),
             Object.keys(two)
         ).reduce(function(result, key) {
@@ -147,4 +147,4 @@ __.mixin({
     },
 });
 
-module.exports = __;
+module.exports = _;
